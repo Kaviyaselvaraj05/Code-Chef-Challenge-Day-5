@@ -1,0 +1,989 @@
+01)Right There:
+If you wanna party, if you, if you wanna party
+Then put your hands up
+
+Chef wants to host a party with a total of 
+𝑁
+N people.
+However, the party hall has a capacity of 
+𝑋
+X people. Find whether Chef can host the party.
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of two space-separated integers 
+𝑁
+N and 
+𝑋
+X — the total number of people and the capacity of the party hall.
+Output Format
+For each test case, output on a new line, YES, if Chef can host the party and NO otherwise.
+
+Each character of the output may be printed in either uppercase or lowercase. That is, the strings NO, no, nO, and No will be treated as equivalent.
+
+Constraints
+1
+≤
+𝑇
+≤
+100
+1≤T≤100
+1
+≤
+𝑁
+,
+𝑋
+≤
+10
+1≤N,X≤10
+Sample 1:
+Input
+Output
+4
+2 5
+4 3
+6 6
+10 9
+YES
+NO
+YES
+NO
+Explanation:
+Test case 
+1
+1: Chef wants to host a party with 
+2
+2 people. Since the capacity of the hall is 
+5
+5, he can host the party.
+
+Test case 
+2
+2: Chef wants to host a party with 
+4
+4 people. Since the capacity of the hall is 
+3
+3, he can not host the party.
+
+Test case 
+3
+3: Chef wants to host a party with 
+6
+6 people. Since the capacity of the hall is 
+6
+6, he can host the party.
+
+Test case 
+4
+4: Chef wants to host a party with 
+10
+10 people. Since the capacity of the hall is 
+9
+9, he can not host the party.
+
+ANSWER:
+for _ in range(int(input())):
+    n,x=map(int,input().split())
+    if n<=x:
+        print('YES')
+    else:
+        print('NO')
+
+    02)Second Max of Three Numbers
+Problem Statement
+Write a program that accepts sets of three numbers, and prints the second-maximum number among the three.
+
+Input
+First line contains the number of triples, N.
+The next N lines which follow each have three space separated integers.
+Output
+For each of the N triples, output one new line which contains the second-maximum integer among the three.
+
+Constraints
+1 ≤ N ≤ 6
+1 ≤ every integer ≤ 10000
+The three integers in a single triplet are all distinct. That is, no two of them are equal.
+Sample 1:
+Input
+Output
+3
+1 2 3
+10 15 5
+100 999 500
+2
+10
+500
+
+ANSWER:
+for _ in range(int(input())):
+    nums = list(map(int, input().split()))
+    nums.remove(max(nums))
+    print(max(nums))
+
+03)Bull or Bear
+Chef is on his way to become the new big bull of the stock market but is a bit weak at calculating whether he made a profit or a loss on his deal.
+
+Given that Chef bought the stock at value 
+𝑋
+X and sold it at value 
+𝑌
+Y. Help him calculate whether he made a profit, loss, or was it a neutral deal.
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of a single line of input containing two space-separated integers 
+𝑋
+X and 
+𝑌
+Y, denoting the value at which Chef bought and sold the stock respectively.
+Output Format
+For each test case, output PROFIT if Chef made a profit on the deal, LOSS if Chef incurred a loss on the deal, and NEUTRAL otherwise.
+
+The checker is case-insensitive so answers like pROfiT, profit, and PROFIT would be considered the same.
+
+Constraints
+1
+≤
+𝑇
+≤
+500
+1≤T≤500
+1
+≤
+𝑋
+,
+𝑌
+≤
+100
+1≤X,Y≤100
+Sample 1:
+Input
+Output
+4
+4 2
+8 8
+3 4
+2 1
+LOSS
+NEUTRAL
+PROFIT
+LOSS
+Explanation:
+Test case 
+1
+1: Since the cost price is greater than the selling price, Chef made a loss in the deal.
+
+Test case 
+2
+2: Since the cost price is equal to the selling price, the deal was neutral.
+
+Test case 
+3
+3: Since the cost price is less than the selling price, Chef made a profit in the deal.
+
+Test case 
+4
+4: Since the cost price is greater than the selling price, Chef made a loss in the deal.
+
+ANSWER:
+t=int(input())
+for x in range(t):
+    a=[int(c) for c in input().split()]
+    if a[0]>a[1]:
+        print("LOSS")
+    elif a[0]<a[1]:
+        print("PROFIT")
+    else:
+        print("NEUTRAL")
+
+04)Four Tickets
+Four friends want to attend a concert. Each ticket costs 
+𝑋
+X rupees.
+They have decided to go to the concert if and only if the total cost of the tickets does not exceed 
+1000
+1000 rupees.
+
+Determine whether they will be going to the concert or not.
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of a single integer 
+𝑋
+X, the cost of each ticket.
+Output Format
+For each test case, output YES if they will be going to the concert, NO otherwise.
+
+You can print each character in uppercase or lowercase. For example, the strings YES, yes, Yes, and yES, are all considered identical.
+
+Constraints
+1
+≤
+𝑇
+≤
+100
+1≤T≤100
+1
+≤
+𝑋
+≤
+1000
+1≤X≤1000
+Sample 1:
+Input
+Output
+4
+100
+500
+250
+1000
+YES
+NO
+YES
+NO
+Explanation:
+Test case 
+1
+1: The total cost of all tickets is 
+100
+⋅
+4
+=
+400
+100⋅4=400 which is 
+≤
+1000
+≤1000. Thus, they will go to the concert.
+
+Test case 
+2
+2: The total cost of all tickets is 
+500
+⋅
+4
+=
+2000
+500⋅4=2000 which is 
+>
+1000
+>1000. Thus, they will not go to the concert.
+
+Test case 
+3
+3: The total cost of all tickets is 
+250
+⋅
+4
+=
+1000
+250⋅4=1000 which is 
+≤
+1000
+≤1000. Thus, they will go to the concert.
+
+Test case 
+4
+4: The total cost of all tickets is 
+1000
+⋅
+4
+=
+4000
+1000⋅4=4000 which is 
+>
+1000
+>1000. Thus, they will not go to the concert.
+
+ANSWER:
+T=int(input())
+for _ in range(T):
+    X=int(input())
+    if((4*X)<=1000):
+        print("YES")
+    else:
+        print("NO")
+
+05)Chairs Requirement
+Chef's coding class is very famous in Chefland.
+
+This year 
+𝑋
+X students joined his class and each student will require one chair to sit on. Chef already has 
+𝑌
+Y chairs in his class. Determine the minimum number of new chairs Chef must buy so that every student is able to get one chair to sit on.
+
+Input Format
+The first line contains a single integer 
+𝑇
+T — the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two integers 
+𝑋
+X and 
+𝑌
+Y — the number of students in the class and the number of chairs Chef already has.
+Output Format
+For each test case, output the minimum number of extra chairs Chef must buy so that every student gets one chair.
+
+Constraints
+1
+≤
+𝑇
+≤
+1000
+1≤T≤1000
+0
+≤
+𝑋
+,
+𝑌
+≤
+100
+0≤X,Y≤100
+Sample 1:
+Input
+Output
+4
+20 14
+41 41
+35 0
+50 100
+6
+0
+35
+0
+Explanation:
+Test case 1: There are 
+20
+20 students in the class and Chef has 
+14
+14 chairs already. Therefore Chef must buy 
+6
+6 more chairs.
+Test case 2: There are 
+41
+41 students in the class and Chef already has exactly 
+41
+41 chairs. Therefore Chef does not need to buy any more chairs.
+Test case 3: There are 
+35
+35 students in the class and Chef has no chairs initially. Therefore Chef must buy 
+35
+35 chairs.
+
+ANSWER:
+T = int(input())
+for i in range(T):
+    X, Y = map(int, input().split())
+    if Y>X:
+        print(0)
+    else:
+        print(X-Y)
+
+06)Chef and Donation
+In a certain month, Chef earned 
+𝑋
+X rupees while Chefina earned 
+𝑌
+Y rupees such that 
+𝑌
+>
+𝑋
+Y>X.
+Since they want to end up with exactly the same amount, they decide to donate the difference between their income to a charity.
+
+Find the amount they donate in the month.
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+Each test case consists of two space-separated integers 
+𝑋
+X and 
+𝑌
+Y — the income of Chef and Chefina in a month, respectively.
+Output Format
+For each test case, output on a new line, the amount they donate in the month.
+
+Constraints
+1
+≤
+𝑇
+≤
+100
+1≤T≤100
+1
+≤
+𝑋
+<
+𝑌
+≤
+10
+1≤X<Y≤10
+Sample 1:
+Input
+Output
+4
+1 3
+2 5
+4 5
+2 10
+2
+3
+1
+8
+Explanation:
+Test case 
+1
+1: Chef earns 
+1
+1 rupees while Chefina earns 
+3
+3 rupees. The difference between their income is 
+3
+−
+1
+=
+2
+3−1=2. Thus, they donate 
+2
+2 rupees to charity.
+
+Test case 
+2
+2: Chef earns 
+2
+2 rupees while Chefina earns 
+5
+5 rupees. The difference between their income is 
+5
+−
+2
+=
+3
+5−2=3. Thus, they donate 
+3
+3 rupees to charity.
+
+Test case 
+3
+3: Chef earns 
+4
+4 rupees while Chefina earns 
+5
+5 rupees. The difference between their income is 
+5
+−
+4
+=
+1
+5−4=1. Thus, they donate 
+1
+1 rupees to charity.
+
+Test case 
+4
+4: Chef earns 
+2
+2 rupees while Chefina earns 
+10
+10 rupees. The difference between their income is 
+10
+−
+2
+=
+8
+10−2=8. Thus, they donate 
+8
+8 rupees to charity.
+
+ANSWER:
+t=int(input())
+for i in range(t):
+    x,y=map(int,input().split())
+    r=abs(x-y)
+    print(r)
+
+07)Sum it
+Bob received an assignment from his school: he has two numbers 
+𝐴
+A and 
+𝐵
+B, and he has to find the sum of these two numbers.
+Alice, being a good friend of Bob, told him that the answer to this question is 
+𝐶
+C.
+Bob doesn't completely trust Alice and asked you to tell him if the answer given by Alice is correct or not.
+If the answer is correct print "YES", otherwise print "NO" (without quotes).
+
+Input Format
+The first line of input will contain a single integer 
+𝑇
+T, denoting the number of test cases.
+The first and only line of each test case consists of three space-separated integers 
+𝐴
+,
+𝐵
+,
+A,B, and 
+𝐶
+C.
+Output Format
+For each test case, output on a new line the answer: YES if Alice gave the right answer, and NO otherwise.
+
+Each character of the output may be printed in either uppercase or lowercase, i.e, the outputs Yes, YES, yEs and yes will be treated as equivalent.
+
+Constraints
+1
+≤
+𝑇
+≤
+100
+1≤T≤100
+0
+≤
+𝐴
+,
+𝐵
+,
+𝐶
+≤
+100
+0≤A,B,C≤100
+Sample 1:
+Input
+Output
+3
+1 2 3
+4 5 9
+2 3 6
+YES
+YES
+NO
+Explanation:
+Test case 
+1
+1: 
+1
++
+2
+=
+3
+1+2=3, so Alice's answer is correct.
+
+Test case 
+2
+2: 
+4
++
+5
+=
+9
+4+5=9, so Alice's answer is correct.
+
+Test case 
+3
+3: 
+2
++
+3
+=
+5
+2+3=5 which doesn't equal 
+6
+6, so Alice's answer is incorrect.
+
+ANSWER:
+def main():
+    T = int(input())
+    while T > 0:
+        check_sum()
+        T -= 1
+
+def check_sum():
+    A, B, C = map(int, input().split())
+    sum = A + B
+    if (sum == C):
+        print ("YES")
+    else:
+        print ("NO")
+main()
+
+08)Get Subscription
+Chef wants to conduct a lecture for which he needs to set up an online meeting of exactly 
+𝑋
+X minutes.
+
+The meeting platform supports a meeting of maximum 
+30
+30 minutes without subscription and a meeting of unlimited duration with subscription.
+
+Determine whether Chef needs to take a subscription or not for setting up the meet.
+
+Input Format
+First line will contain 
+𝑇
+T, the number of test cases. Then the test cases follow.
+Each test case contains a single integer 
+𝑋
+X - denoting the duration of the lecture.
+Output Format
+For each test case, print in a single line, YES if Chef needs to take the subscription, otherwise print NO.
+
+You may print each character of the string in uppercase or lowercase (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+
+Constraints
+1
+≤
+𝑇
+≤
+100
+1≤T≤100
+1
+≤
+𝑋
+≤
+100
+1≤X≤100
+Sample 1:
+Input
+Output
+4
+50
+3
+30
+80
+YES
+NO
+NO
+YES
+Explanation:
+Test Case 
+1
+1: Without subscription, the platform allows only 
+30
+30 minutes of duration. Since Chef needs to conduct a lecture of 
+50
+50 minutes, he needs to buy the subscription.
+
+Test Case 
+2
+2: Without subscription, the platform allows 
+30
+30 minutes of duration. Since Chef needs to conduct a lecture of 
+3
+3 minutes only, he does not need to buy the subscription.
+
+Test Case 
+3
+3: Without subscription, the platform allows 
+30
+30 minutes of duration. Since Chef needs to conduct a lecture of 
+30
+30 minutes only, he does not need to buy the subscription.
+
+Test Case 
+4
+4: Without subscription, the platform allows only 
+30
+30 minutes of duration. Since Chef needs to conduct a lecture of 
+80
+80 minutes, he needs to buy the subscription.
+
+ANSWER:
+for i in range (int(input())):
+    x=int(input())
+    if x>30:
+        print('YES')
+    else:
+        print('NO')
+09)Messi vs Ronaldo
+In Chefland, a football player gets 
+2
+2 points for each goal and 
+1
+1 point for each assist.
+
+Messi has 
+𝐴
+A goals and 
+𝐵
+B assists this season, whereas Ronaldo has 
+𝑋
+X goals and 
+𝑌
+Y assists.
+Find out the player with more points this season.
+
+Input Format
+The first and only line of input will contains four space-separated integers 
+𝐴
+A, 
+𝐵
+B, 
+𝑋
+X and 
+𝑌
+Y, the number of goals and assists that Messi has and the number of goals and assists that Ronaldo has, respectively.
+Output Format
+Print a single line containing:
+
+Messi, if Messi has more points than Ronaldo.
+Ronaldo, if Ronaldo has more points than Messi.
+Equal, if both have equal points.
+You can print each character in uppercase or lowercase. For example, the strings Messi, MESSI, messi, and MeSSi are considered identical.
+
+Constraints
+0
+≤
+𝐴
+,
+𝐵
+,
+𝑋
+,
+𝑌
+≤
+100
+0≤A,B,X,Y≤100
+Sample 1:
+Input
+Output
+40 30 50 10
+Equal
+Explanation:
+Messi has 
+40
+40 goals and 
+30
+30 assists. Thus, his total points are 
+40
+⋅
+2
++
+30
+=
+110
+40⋅2+30=110.
+Ronaldo has 
+50
+50 goals and 
+10
+10 assists. Thus, his total points are 
+50
+⋅
+2
++
+10
+=
+110
+50⋅2+10=110.
+Both have 
+110
+110 points.
+
+Sample 2:
+Input
+Output
+91 22 60 30 
+Messi
+Explanation:
+Messi has 
+91
+91 goals and 
+22
+22 assists. Thus, his total points are 
+91
+⋅
+2
++
+22
+=
+204
+91⋅2+22=204.
+Ronaldo has 
+60
+60 goals and 
+30
+30 assists. Thus, his total points are 
+60
+⋅
+2
++
+30
+=
+150
+60⋅2+30=150.
+Messi has 
+204
+204 points, whereas Ronaldo has 
+150
+150.
+
+Sample 3:
+Input
+Output
+60 30 80 20
+Ronaldo
+Explanation:
+Messi has 
+60
+60 goals and 
+30
+30 assists. Thus, his total points are 
+60
+⋅
+2
++
+30
+=
+150
+60⋅2+30=150.
+Ronaldo has 
+80
+80 goals and 
+20
+20 assists. Thus, his total points are 
+80
+⋅
+2
++
+20
+=
+180
+80⋅2+20=180.
+Messi has 
+150
+150 points, whereas Ronaldo has 
+180
+180.
+
+ANSWER:
+A, B, X, Y = map(int, input().split())
+points_Messi = A * 2 + B
+points_Ronaldo = X * 2 + Y
+if points_Messi > points_Ronaldo:
+    print("Messi")
+elif points_Messi < points_Ronaldo:
+    print("Ronaldo")
+else:
+    print("Equal")
+
+10)Waiting Time
+Chef is eagerly waiting for a piece of information. His secret agent told him that this information would be revealed to him after 
+𝐾
+K weeks.
+
+𝑋
+X days have already passed and Chef is getting restless now. Find the number of remaining days Chef has to wait for, to get the information.
+
+It is guaranteed that the information has not been revealed to the Chef yet.
+
+Input Format
+The first line of input will contain an integer 
+𝑇
+T — the number of test cases. The description of 
+𝑇
+T test cases follows.
+The first and only line of each test case contains two space-separated integers 
+𝐾
+K and 
+𝑋
+X, as described in the problem statement.
+Output Format
+For each test case, output the number of remaining days that Chef will have to wait for.
+
+Constraints
+1
+≤
+𝑇
+≤
+500
+1≤T≤500
+1
+≤
+𝐾
+≤
+10
+1≤K≤10
+1
+≤
+𝑋
+<
+7
+⋅
+𝐾
+1≤X<7⋅K
+Sample 1:
+Input
+Output
+4
+1 5
+1 6
+1 1
+1 2
+2
+1
+6
+5
+Explanation:
+Test case 
+1
+1: The information will be revealed to the Chef after 
+1
+1 week, which is equivalent to 
+7
+7 days. Chef has already waited for 
+5
+5 days, so he needs to wait for 
+2
+2 more days in order to get the information.
+
+Test case 
+2
+2: The information will be revealed to the Chef after 
+1
+1 week, which is equivalent to 
+7
+7 days. Chef has already waited for 
+6
+6 days, so he needs to wait for 
+1
+1 more day in order to get the information.
+
+Test case 
+3
+3: The information will be revealed to the Chef after 
+1
+1 week, which is equivalent to 
+7
+7 days. Chef has already waited for 
+1
+1 day, so he needs to wait for 
+6
+6 more days in order to get the information.
+
+Test case 
+4
+4: The information will be revealed to the Chef after 
+1
+1 week, which is equivalent to 
+7
+7 days. Chef has already waited for 
+2
+2 days, so he needs to wait for 
+5
+5 more days in order to get the information.
+
+ANSWER:
+t = int(input())
+for i in range(t):
+    k, x =  map(int, input().split())
+    print(7*k - x)
+
